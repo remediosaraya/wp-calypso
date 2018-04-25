@@ -170,6 +170,8 @@ class RegisterDomainStep extends React.Component {
 		onAddDomain: PropTypes.func,
 		onAddTransfer: PropTypes.func,
 		designType: PropTypes.string,
+		recordFilterSubmit: PropTypes.func.isRequired,
+		recordFilterReset: PropTypes.func.isRequired,
 	};
 
 	static defaultProps = {
