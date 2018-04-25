@@ -957,6 +957,8 @@ class RegisterDomainStep extends React.Component {
 			suggestions = this.props.defaultSuggestions || [];
 		}
 
+		const showTldFilterBar = config.isEnabled( 'domains/kracken-ui/tld-filter' );
+
 		return (
 			<DomainSearchResults
 				key="domain-search-results" // key is required for CSS transition of content/
@@ -982,7 +984,7 @@ class RegisterDomainStep extends React.Component {
 				fetchAlgo={ fetchAlgo }
 				cart={ this.props.cart }
 			>
-				{ config.isEnabled( 'domains/kracken-ui/filters' ) && (
+				{ showTldFilterBar && (
 					<TldFilterBar
 						availableTlds={ this.state.availableTlds }
 						filters={ this.state.filters }
