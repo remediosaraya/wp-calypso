@@ -27,7 +27,7 @@ const fallbackLinks = [
 		link: 'https://en.support.wordpress.com/start/',
 		title: 'Five Steps to Getting Started',
 		description:
-			'No matter what kind of site you want to build, our five-step checklists will get you set up and ready to publish.',
+			'No matter what kind of site you want to build, our five-step checklist will get you set up and ready to publish.',
 	},
 	{
 		link: 'https://en.support.wordpress.com/settings/privacy-settings/',
@@ -113,7 +113,7 @@ const contextLinksForSection = {
 		{
 			link: 'http://en.support.wordpress.com/account-deactivation/',
 			title: 'Account Deactivation',
-			description: 'Finished with your WordPress.com account? Would you like to shut it down?',
+			description: 'Sometimes you need a fresh start. Learn how to deactivate your account.',
 		},
 		{
 			link: 'http://en.support.wordpress.com/change-your-username/',
@@ -193,8 +193,7 @@ const contextLinksForSection = {
 			link: 'http://en.support.wordpress.com/discover-the-wordpress-com-plans/',
 			title: 'Discover the WordPress.com Plans',
 			description:
-				'Thank you for building your site on WordPress.com! Upgrading to a plan unlocks a ton of features. ' +
-				'Read more to understand what would be best for you.',
+				'Upgrading to a plan unlocks a ton of features. Read more to understand which one would be the best fit for your needs.',
 		},
 	],
 	'notification-settings': [
@@ -202,26 +201,25 @@ const contextLinksForSection = {
 			link: 'http://en.support.wordpress.com/notifications/',
 			title: 'Notifications',
 			description:
-				'Stuff happens all the time on WordPress.com. You’re blogging, commenting, ' +
-				'liking, and following like never before. Learn how to use notifications to stay on top of things.',
+				'Learn how to use notifications to stay on top of all the things happening on WordPress.com.',
 		},
 		{
 			link: 'http://en.support.wordpress.com/email-notifications/',
 			title: 'Email Notifications',
 			description:
 				'Notifications from WordPress.com will be sent to the email address registered ' +
-				'to your WordPress.com account. Learn how to configure them.',
+				'to your WordPress.com account. Learn how to manage them.',
 		},
 		{
 			link: 'http://en.support.wordpress.com/following-comments/',
-			title: 'Follow Comments',
+			title: 'How To Follow Comments',
 			description:
 				'When you leave a comment on a WordPress.com blog, you can choose to automatically ' +
 				'receive email updates about other comments.',
 		},
 		{
 			link: 'http://en.support.wordpress.com/following/',
-			title: 'Follow Blogs',
+			title: 'How To Follow Blogs',
 			description:
 				'When you follow a blog on WordPress.com, the new posts from that site will appear in your Reader.',
 		},
@@ -298,7 +296,7 @@ const contextLinksForSection = {
 		},
 		{
 			link: 'http://en.support.wordpress.com/plugins/adding-plugins/',
-			title: 'Add plugins',
+			title: 'How To Add Plugins',
 			description:
 				'In addition to built-in plugin functionality, WordPress.com ' +
 				'Business allows you to install other plugins!',
@@ -307,8 +305,7 @@ const contextLinksForSection = {
 			link: 'http://en.support.wordpress.com/business-plan/',
 			title: 'Business Plan',
 			description:
-				'WordPress.com provides users with a great experience out of the box. But what if you ' +
-				'need to upload your own plugins or themes? The Business plan allows you to do just that.',
+				'Need to upload your own plugins or themes? The Business plan allows you to do just that.',
 		},
 	],
 	'posts-pages': [
@@ -433,7 +430,7 @@ const contextLinksForSection = {
 		},
 		{
 			link: 'http://en.support.wordpress.com/selecting-a-strong-password/',
-			title: 'Select a Strong Password',
+			title: 'How To Select A Strong Password',
 			description:
 				'The weakest point in any security for your online accounts is usually your password. Learn how to select a strong one.',
 		},
@@ -462,8 +459,7 @@ const contextLinksForSection = {
 		{
 			link: 'http://en.support.wordpress.com/five-step-blog-setup/',
 			title: 'Set Up Your Blog in Five Steps',
-			description:
-				'Our five-step checklists will get you set up and ready to publish to your blog.',
+			description: 'Our five-step checklist will get you set up and ready to publish to your blog.',
 		},
 	],
 	themes: [
@@ -493,7 +489,7 @@ const contextLinksForSection = {
 				'http://en.support.wordpress.com/themes/uploading-setting-up-custom-themes/child-themes/',
 			title: 'Child Themes',
 			description:
-				'Need to customize your theme beyond what’s possible with the existing tools? You could consider creating a child theme.',
+				'Child themes allow you to extend your site beyond what’s possible with the existing tools. Learn how to use them!',
 		},
 	],
 	theme: [
@@ -523,7 +519,7 @@ const contextLinksForSection = {
 				'http://en.support.wordpress.com/themes/uploading-setting-up-custom-themes/child-themes/',
 			title: 'Child Themes',
 			description:
-				'Need to customize your theme beyond what’s possible with the existing tools? You could consider creating a child theme.',
+				'Child themes allow you to extend your site beyond what’s possible with the existing tools. Learn how to use them!',
 		},
 	],
 	plans: [
