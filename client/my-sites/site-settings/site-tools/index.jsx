@@ -17,9 +17,10 @@ import { tracks } from 'lib/analytics';
 import { localize } from 'i18n-calypso';
 import SectionHeader from 'components/section-header';
 import SiteToolsLink from './link';
+import QueryRewindState from 'components/data/query-rewind-state';
 import { getSelectedSiteId, getSelectedSiteSlug } from 'state/ui/selectors';
 import { isJetpackSite, getSiteAdminUrl } from 'state/sites/selectors';
-import { isSiteAutomatedTransfer, isVipSite } from 'state/selectors';
+import { getRewindState, isSiteAutomatedTransfer, isVipSite } from 'state/selectors';
 import {
 	getSitePurchases,
 	hasLoadedSitePurchasesFromServer,
@@ -53,10 +54,12 @@ class SiteTools extends Component {
 			exportUrl,
 			cloneUrl,
 			showChangeAddress,
+			showClone,
 			showDeleteContent,
 			showDeleteSite,
 			showThemeSetup,
 			showManageConnection,
+			siteId,
 		} = this.props;
 
 		const changeAddressLink = `/domains/manage/${ siteSlug }`;
@@ -100,6 +103,7 @@ class SiteTools extends Component {
 
 		return (
 			<div className="site-tools">
+				<QueryRewindState siteId={ siteId } />
 				<SectionHeader label={ translate( 'Site Tools' ) } />
 				{ showChangeAddress && (
 					<SiteToolsLink
@@ -111,7 +115,9 @@ class SiteTools extends Component {
 				) }
 				<SiteToolsLink href={ importUrl } title={ importTitle } description={ importText } />
 				<SiteToolsLink href={ exportUrl } title={ exportTitle } description={ exportText } />
-				<SiteToolsLink href={ cloneUrl } title={ cloneTitle } description={ cloneText } />
+				{ showClone && (
+					<SiteToolsLink href={ cloneUrl } title={ cloneTitle } description={ cloneText } />
+				) }
 				{ showThemeSetup && (
 					<SiteToolsLink
 						href={ themeSetupLink }
@@ -183,6 +189,7 @@ export default connect( state => {
 	const isAtomic = isSiteAutomatedTransfer( state, siteId );
 	const isJetpack = isJetpackSite( state, siteId );
 	const isVip = isVipSite( state, siteId );
+	const rewindState = getRewindState( state, siteId );
 	const sitePurchasesLoaded = hasLoadedSitePurchasesFromServer( state );
 
 	let importUrl = `/settings/import/${ siteSlug }`;
@@ -202,9 +209,11 @@ export default connect( state => {
 		exportUrl,
 		cloneUrl,
 		showChangeAddress: ! isJetpack && ! isVip,
+		showClone: 'active' === rewindState.state,
 		showThemeSetup: config.isEnabled( 'settings/theme-setup' ) && ! isJetpack && ! isVip,
 		showDeleteContent: ! isJetpack && ! isVip,
 		showDeleteSite: ( ! isJetpack || isAtomic ) && ! isVip && sitePurchasesLoaded,
 		showManageConnection: isJetpack && ! isAtomic,
+		siteId,
 	};
 } )( localize( SiteTools ) );
